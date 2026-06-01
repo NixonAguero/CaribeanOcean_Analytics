@@ -6,5 +6,19 @@ dist/
 wheels/
 *.egg-info
 
+.pytest_cache/
+.ruff_cache/
+*.py[cod]
+*.pyo
+
 # Virtual environments
 .venv
+.venv/
+.env
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+
+# Alembic (las versiones sí van a Git, esto no)
+alembic/versions/*.pyc

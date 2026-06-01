@@ -18,3 +18,11 @@ dependencies = [
     "sqlalchemy[asyncio]>=2.0.50",
     "uvicorn[standard]>=0.48.0",
 ]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
