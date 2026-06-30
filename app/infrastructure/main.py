@@ -4,7 +4,7 @@ from fastapi import Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.adapters.controllers.routers import revenue
+from app.adapters.controllers.routers import occupancy, revenue
 
 from .config import create_app
 
@@ -15,7 +15,7 @@ app = create_app()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5174"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -32,6 +32,7 @@ async def global_exception_handler(request: Request, exc: Exception):
 
 
 app.include_router(revenue.router, prefix="/api/v1")
+app.include_router(occupancy.router, prefix="/api/v1")
 
 
 @app.get("/health")
